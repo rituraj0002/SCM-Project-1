@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWD form</title>
+    <style>
+        body{
+            background-image: linear-gradient(to top right,blue,black 50%,grey);
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
+        }
+        #img1{
+            height: 300px;
+            width:300px;
+            border-radius: 20px;
+        }
+        label{
+            color: white;
+            font-size: 23px;
+        }
+        input,select{
+            margin-top: 30px;
+            border-radius: 10px;
+            height: 20px;
+            width: 200px;
+        }
+        button
+        {
+            margin-top: 10px;
+            background-color: aquamarine;
+            width: 70px;
+            height: 25px;
+            border-radius: 10px;
+        }
+        div{
+            border: 2px solid violet;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <img src="/Final Viva/Pristine Designs.png" id="img1"><br>
+        <label>Name:</label>
+        <input id="in1"><br>
+        <label>Roll no:</label>
+        <input id="in2">
+        <br>
+        <label>Class:</label>
+        <select id="sl1">
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8
+            </option>
+            <option>9</option>
+            <option>10</option>
+        </select id="sl2"><br>
+        <label>Section:</label>
+        <select>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+        </select><br>
+        <button onclick="ab()" id="btn1">Submit</button>
+        <button id="btn2">2ndclick</button>
+
+    </div>
+</body>
+<script src="./Final Viva/jquery-3.6.0.js"></script>
+<script>
+    $("#btn1").click(function(){
+        $("#img1").animate({rotate:"360deg"},2000);
+        $("#in2").trigger("focus");
+    });
+    $("#btn2").click(function(){
+        $("#in2").off("trigger");
+    })
+
+    $("input").focus(function(){
+        $(this).css("background-color","orange");
+    });
+    $("input").blur(function(){
+        $(this).css({"background-color":"green","width":"500px","opacity":"0.2"});
+    });
+</script>
+</html>
